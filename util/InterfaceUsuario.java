@@ -1,6 +1,9 @@
-import model.*
+import model.Caminhao;
+import model.Carro;
+import model.Moto;
 import java.util.Scanner;
-import java.util.array java
+import java.util.List;
+import java.util.ArrayList;
 
 // Solicita informaçoes e exibe dados cadastrados.
 
@@ -9,7 +12,10 @@ public class InterfaceUsuario {
     
     // Instancia Scanner
     private Scanner scanner;
-    public InterfaceUsuario() {this.scanner = new Scanner(System.in)}; 
+
+    public InterfaceUsuario() {
+        this.scanner = new Scanner(System.in);
+    }
 
 
     // Método Menu Seleção Cadastro de Veículos
@@ -24,7 +30,7 @@ public class InterfaceUsuario {
 
 
     // Guarda informaçoes dos veículos na Array para exibição posterior
-    List<Veiculo> veiculos = new ArrayList<>;
+    List<Veiculo> veiculos = new ArrayList<>();
 
     // Laço FOR para exibição.
     // Para exibição dos veículos, basta aplicar um laço de repetição for
@@ -57,7 +63,7 @@ public class InterfaceUsuario {
     // Também é possível usar métodos auxiliares. Dessa forma, fica mais limpo
     private void listarPorTipoVeiculo(Class<?> tipo){
         for (Veiculo v : veiculos){
-            if (tipo.isIstance)(v)){
+            if (tipo.isInstance(v)){
                 v.exibirDetalhes();
             }
         }
@@ -69,12 +75,4 @@ public class InterfaceUsuario {
     listarPorTipoVeiculo(Moto.class);
 
 
-    public Veiculo criarCadastroVeiculo(){
-        int opcao = mostrarMenuCadastroVeiculos();
-        if (opcao == 0) {
-            return null;
-
-            // usar switch chamando metodos
-        }
-    }
 }
